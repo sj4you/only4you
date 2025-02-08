@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Activity</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Video background */
+        #videoBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Heart-shaped buttons */
+        .heart-button {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 75%, 15% 100%, 0% 35%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        .heart-button:hover {
+            background-color: #ff85c1;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .heart-button p {
+            margin: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video background -->
+    <video id="videoBackground" autoplay muted loop>
+        <source src="heart.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h1>Pick One my Baby Girl</h1>
+        <div class="buttons-container">
+            <div class="heart-button" onclick="window.location.href='things-i-like.html'">
+                <p>Things I Like About You</p>
+            </div>
+            <div class="heart-button" onclick="window.location.href='things-i-hate.html'">
+                <p>Things I Hate About You</p>
+            </div>
+            <div class="heart-button" onclick="window.location.href='lyrics-remind-me.html'">
+                <p>Lyrics that Remind Me of You</p>
+            </div>
+            <!-- New Button -->
+            <div class="heart-button" onclick="window.location.href='i-love-you.html'">
+                <p>I have seen all, what's next?</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Things I Hate About You</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #222;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .message {
+            font-size: 1rem;
+            opacity: 0;
+            position: absolute;
+            text-align: center;
+            animation: fadeIn 2s forwards;
+        }
+
+        #message1 {
+            top: 40%;
+            animation: growAndShow 4s forwards;
+        }
+
+        #message2 {
+            top: 50%;
+            animation: fadeIn 2s forwards 5s;
+        }
+
+        /* Button */
+        .button-container {
+            position: absolute;
+            top: 70%;
+            text-align: center;
+        }
+
+        button {
+            background-color: #ff69b4;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            animation: buttonFade 2s forwards;
+        }
+
+        button:hover {
+            background-color: #ff85c1;
+        }
+
+        /* Final message */
+        #finalMessage {
+            opacity: 0;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 60%;
+            display: none;
+        }
+
+        @keyframes growAndShow {
+            0% { opacity: 0; font-size: 1rem; }
+            50% { opacity: 1; font-size: 2.5rem; }
+            100% { opacity: 1; font-size: 4rem; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes buttonFade {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Right-side background animation */
+        .right-background {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 10%;
+            height: 20%;
+            border-radius: 50%;
+            background-image: url('Cat.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: expandImage 8s forwards 6s;
+        }
+
+        @keyframes expandImage {
+            0% {
+                width: 10%;
+                height: 20%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                width: 40%;
+                height: 100%;
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Messages -->
+<div id="message1" class="message">What???????</div>
+<div id="message2" class="message">Why did you even click on it??????</div>
+
+<!-- Button to reveal the final message -->
+<div class="button-container">
+    <button id="revealButton" style="display:none">You really wanna know????</button>
+</div>
+
+<!-- Final message that appears after clicking "Yes" -->
+<div id="finalMessage">There are none baby, you're all perfect and I love everything about you. I love you so much!</div>
+
+
+<!-- Right-Side Background -->
+<div class="right-background"></div>
+
+<script>
+    // Display first message (grow animation starts)
+    setTimeout(function() {
+        document.getElementById('message1').style.opacity = '1';
+    }, 1000);
+
+    // Display second message after the first one grows bigger
+    setTimeout(function() {
+        document.getElementById('message2').style.opacity = '1';
+    }, 5000);
+
+    // When the button is clicked
+    document.getElementById('revealButton').addEventListener('click', function() {
+        // Hide the button
+        this.style.display = 'none';
+
+        // Show the final message after button click
+        document.getElementById('finalMessage').style.display = 'block';
+        document.getElementById('finalMessage').style.opacity = '1';
+    });
+    setTimeout(()=>{
+        document.getElementById('revealButton').style.display='block';
+    },14000)
+</script>
+
+</body>
+</html>

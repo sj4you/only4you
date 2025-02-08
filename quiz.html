@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our First Date Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .option-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #eee;
+            transition: background-color 0.3s ease;
+        }
+
+        .option-button:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Our First Date Quiz</h1>
+
+<!-- First Question -->
+<div class="question-container" id="question1">
+    <div class="question">When was our first date?</div>
+    <div class="options">
+        <button class="option-button" onclick="checkAnswer(1, false)">11 October 1872</button>
+        <button class="option-button" onclick="checkAnswer(1, true)">11 October 2024</button>
+    </div>
+</div>
+
+<!-- Placeholder for More Questions -->
+<div class="question-container" id="question2">
+    <div class="question">How much i Love You???????????
+    <div class="options">
+        <button class="option-button" onclick="checkAnswer(2, false)">Aount of water in the ocean
+        <button class="option-button" onclick="checkAnswer(2, true)">Option 2</button>
+    </div>
+</div>
+
+<div class="question-container" id="question3">
+    <div class="question">Placeholder Question 3?</div>
+    <div class="options">
+        <button class="option-button" onclick="checkAnswer(3, false)">Option 1</button>
+        <button class="option-button" onclick="checkAnswer(3, true)">Option 2</button>
+    </div>
+</div>
+
+<div class="question-container" id="question4">
+    <div class="question">Placeholder Question 4?</div>
+    <div class="options">
+        <button class="option-button" onclick="checkAnswer(4, false)">Option 1</button>
+        <button class="option-button" onclick="checkAnswer(4, true)">Option 2</button>
+    </div>
+</div>
+
+<div class="question-container" id="question5">
+    <div class="question">Placeholder Question 5?</div>
+    <div class="options">
+        <button class="option-button" onclick="checkAnswer(5, false)">Option 1</button>
+        <button class="option-button" onclick="checkAnswer(5, true)">Option 2</button>
+    </div>
+</div>
+
+<script>
+    function checkAnswer(questionNumber, isCorrect) {
+        if (isCorrect) {
+            document.body.style.backgroundColor = 'green';
+        } else {
+            document.body.style.backgroundColor = 'red';
+        }
+
+        // Reset background color after 1.5 seconds
+        setTimeout(function() {
+            document.body.style.backgroundColor = '#f0f0f0';
+        }, 1500);
+    }
+</script>
+
+</body>
+</html>

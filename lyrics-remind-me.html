@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics That Remind Me of You</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .lyrics-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .box {
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box1 {
+            background-color: orange;
+        }
+
+        .box2 {
+            background-color: purple;
+        }
+
+        .box3 {
+            background-color: lightblue;
+        }
+
+        .box4 {
+            background-color: lightpink;
+        }
+
+        .audio-player {
+            margin-top: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* Heart-shaped button */
+        .heart-button {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            width: 80px;
+            height: 80px;
+            line-height: 40px;
+            position: relative;
+        }
+
+        .heart-button:before,
+        .heart-button:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .heart-button:before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .heart-button:after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+
+<div class="lyrics-container">
+    <div class="box box1">
+        <div class="lyrics">
+            Harr dua mei shamii tera pyaar hai,<br> 
+            Bin tere lamha bhi dushwar hal <br>
+            Dhadkanon ko tujhse hi darkar hal <br>
+            Tujhse hain rahatein <br>
+            Tujhse hain chaahatein <br>
+            Tu jo mili ek din mujhe <br>
+            Main kahin ho gaya laapata
+        </div>
+        <audio id="audio1" controls class="audio-player">
+            <source src="1.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="box box2">
+        <div class="lyrics">
+            Main kabhi bhoolunga na tujhe <br>
+            Chaahe tu mujh ko dena bhula <br>
+            Aadatein jaisi hai tu meri <br>
+            Aadatein kaise bhoolun bhala
+        </div>
+        <audio id="audio2" controls class="audio-player">
+            <source src="2.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="box box3">
+        <div class="lyrics">
+            Aankhon mein aankhein teri <br>
+            Baahon mein baahein teri <br>
+            Mera na mujhme mein kuch raha, hua ky <br>
+            Baaton mein baatein teri <br>
+            Raatein saugaatein nahi <br>
+            Kyun tera sab yeh ho gaya<br>
+            Hua kya..
+        </div>
+        <audio id="audio3" controls class="audio-player">
+            <source src="3.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="box box4">
+        <div class="lyrics">
+            Aankhen marhaba, baatein marhaba <br>
+            Main sau martaba deewana hua <br>
+            Mera na raha jab se dil mera <br>
+            Tere husn ka nishana hua
+        </div>
+        <audio id="audio4" controls class="audio-player">
+            <source src="4.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</div>
+
+<!-- Heart-shaped button that links to the 'I Love You' page -->
+<a href="i-love-you.html" class="heart-button" title="Click me!">❤️</a>
+
+<script>
+    // Start the first audio file from 1 minute and 53 seconds
+    var audio1 = document.getElementById('audio1');
+    audio1.addEventListener('loadedmetadata', function() {
+        if (audio1.duration > 113) {
+            audio1.currentTime = 113; // Start from 1:53
+        }
+    });
+
+    // Start the second audio file from 4 minutes and 26 seconds
+    var audio2 = document.getElementById('audio2');
+    audio2.addEventListener('loadedmetadata', function() {
+        if (audio2.duration > 266) {
+            audio2.currentTime = 266; // Start from 4:26
+        }
+    });
+
+    // Start the third audio file from 1 minute and 32 seconds
+    var audio3 = document.getElementById('audio3');
+    audio3.addEventListener('loadedmetadata', function() {
+        if (audio3.duration > 92) {
+            audio3.currentTime = 92; // Start from 1:32
+        }
+    });
+
+    // Start the fourth audio file from 46 seconds
+    var audio4 = document.getElementById('audio4');
+    audio4.addEventListener('loadedmetadata', function() {
+        if (audio4.duration > 46) {
+            audio4.currentTime = 46; // Start from 46 seconds
+        }
+    });
+</script>
+
+</body>
+</html>

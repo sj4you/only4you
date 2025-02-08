@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Things I Like About You</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #222;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .message {
+            font-size: 2rem;
+            opacity: 0;
+            position: absolute;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .show {
+            animation: fadeIn 4s forwards;
+        }
+    </style>
+</head>
+<body>
+
+<div id="messageContainer">
+    <!-- Messages will appear here -->
+</div>
+
+<script>
+    const messages = [
+        "yours Beautiful Eyes",
+        "I love your Smile",
+        "I love your Hairs",
+        "Love the way you think ",
+        "I love the way you talk",
+        "I love the way You Smile",
+        "You are pretty",
+        "Your hands i love it when you garb my sholder",
+        "You showed me what true love is",
+        "you make me feel good",
+        "you always make my Day",
+        "you are the reason I am happy ",
+        "I love evertying about you my baby Girl",
+        "I love you sooo soo much",
+        "I love each and evry Side of you !!!"
+    ];
+
+    let index = 0;
+    const messageContainer = document.getElementById('messageContainer');
+
+    function showNextMessage() {
+        let number = messages.length - index;
+        if (index < messages.length) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'show');
+            messageElement.innerText = number + ". " + messages[index];
+            messageContainer.innerHTML = ''; // Clear previous message
+            messageContainer.appendChild(messageElement);
+            index++;
+            setTimeout(showNextMessage, 3000); // Show the next message every 3 seconds
+        }
+    }
+
+    showNextMessage(); // Start showing messages
+</script>
+
+</body>
+</html>
